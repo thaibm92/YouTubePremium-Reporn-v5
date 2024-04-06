@@ -1,7 +1,7 @@
 // About
 "ABOUT" = "About";
 
-"VERSION" = "YouTubeRebornPlus's version: %@";
+"VERSION" = "IOSMOD.NET version: %@";
 "VERSION_CHECK" = "Tap to check for updates!";
 
 "REPORT_AN_ISSUE" = "Report an issue";
@@ -141,7 +141,7 @@
 "HIDE_SPONSORBLOCK_BUTTON" = "Hide iSponsorBlock button in the Navigation bar";
 "HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
 
-"HIDE_YOUTUBE_REBORN_BUTTON" = "Hide YouTube Reborn button in the Navigation bar";
+"HIDE_YOUTUBE_REBORN_BUTTON" = "Hide IOSMOD.NET button in the Navigation bar";
 "HIDE_YOUTUBE_REBORN_BUTTON_DESC" = "";
 
 "YT_SPEED" = "Enable YTSpeed";
