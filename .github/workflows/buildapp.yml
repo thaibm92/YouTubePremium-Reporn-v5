@@ -1,13 +1,13 @@
 # Original idea by @ISnackable. Many thanks to him for handling the most hardest parts!
 # https://github.com/ISnackable/YTCubePlus/blob/main/.github/workflows/Build.yml
 
-name: Build and Release YouTubeRebornPlus
+name: Build and Release YouTube Premium
 
 on:
   workflow_dispatch:
     inputs:
       reborn_version:
-        description: "The version of YouTube Reborn"
+        description: "The version of YouTube Premium"
         default: "5.0.0"
         required: true
         type: string
