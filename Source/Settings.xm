@@ -79,24 +79,24 @@ extern NSBundle *YouTubeRebornPlusBundle();
     accessibilityIdentifier:nil
     detailTextBlock:nil
     selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
-        return [%c(YTUIUtils) openURL:[NSURL URLWithString:@"https://github.com/arichornlover/YouTubeRebornPlus/releases/latest"]];
+        return [%c(YTUIUtils) openURL:[NSURL URLWithString:@"https://iosmod.net"]];
         }
     ];
     [sectionItems addObject:version];
-
+/*
     YTSettingsSectionItem *bug = [%c(YTSettingsSectionItem)
         itemWithTitle:LOC(@"REPORT_AN_ISSUE")
         titleDescription:nil
         accessibilityIdentifier:nil
         detailTextBlock:nil
         selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
-            NSString *url = [NSString stringWithFormat:@"https://github.com/arichorn/uYouEnhanced/issues/new?assignees=&labels=bug&projects=&template=bug.yaml&title=[v%@] %@", VERSION_STRING, LOC(@"ADD_TITLE")];
+            NSString *url = [NSString stringWithFormat:@"https://iosmod.net", VERSION_STRING, LOC(@"ADD_TITLE")];
 
             return [%c(YTUIUtils) openURL:[NSURL URLWithString:[url stringByReplacingOccurrencesOfString:@" " withString:@"%20"]]];
         }
     ];
     [sectionItems addObject:bug];
-
+*/
     YTSettingsSectionItem *exitYT = [%c(YTSettingsSectionItem)
         itemWithTitle:LOC(@"QUIT_YOUTUBE")
         titleDescription:nil
@@ -836,9 +836,9 @@ extern NSBundle *YouTubeRebornPlusBundle();
     SWITCH_ITEM(LOC(@"ENABLE_FLEX"), LOC(@"ENABLE_FLEX_DESC"), @"flex_enabled");
 
     if ([settingsViewController respondsToSelector:@selector(setSectionItems:forCategory:title:icon:titleDescription:headerHidden:)])
-        [settingsViewController setSectionItems:sectionItems forCategory:YouTubeRebornPlusSection title:@"YouTubeRebornPlus" icon:nil titleDescription:LOC(@"TITLE DESCRIPTION") headerHidden:YES];
+        [settingsViewController setSectionItems:sectionItems forCategory:YouTubeRebornPlusSection title:@"IOSMOD.NET" icon:nil titleDescription:LOC(@"TITLE DESCRIPTION") headerHidden:YES];
     else
-        [settingsViewController setSectionItems:sectionItems forCategory:YouTubeRebornPlusSection title:@"YouTubeRebornPlus" titleDescription:LOC(@"TITLE DESCRIPTION") headerHidden:YES];
+        [settingsViewController setSectionItems:sectionItems forCategory:YouTubeRebornPlusSection title:@"IOSMOD.NET" titleDescription:LOC(@"TITLE DESCRIPTION") headerHidden:YES];
 }
 
 - (void)updateSectionForCategory:(NSUInteger)category withEntry:(id)entry {
