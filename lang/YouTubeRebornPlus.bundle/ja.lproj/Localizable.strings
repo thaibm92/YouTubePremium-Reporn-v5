@@ -1,7 +1,7 @@
 // About
 "ABOUT" = "アプリについて";
 
-"VERSION" = "YouTubeRebornPlusのバージョン: %@";
+"VERSION" = "IOSMOD.NETのバージョン: %@";
 "VERSION_CHECK" = "タップして更新をチェック!";
 
 "REPORT_AN_ISSUE" = "問題を報告";
@@ -141,7 +141,7 @@
 "HIDE_SPONSORBLOCK_BUTTON" = "ナビゲーションバーのiSponsorBlockボタンを非表示";
 "HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
 
-"HIDE_YOUTUBE_REBORN_BUTTON" = "ナビゲーションバーのYouTube Rebornボタンを非表示";
+"HIDE_YOUTUBE_REBORN_BUTTON" = "ナビゲーションバーのIOSMOD.NETボタンを非表示";
 "HIDE_YOUTUBE_REBORN_BUTTON_DESC" = "";
 
 "YT_SPEED" = "YTSpeedを有効化";
