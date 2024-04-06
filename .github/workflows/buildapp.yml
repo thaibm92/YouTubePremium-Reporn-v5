@@ -109,7 +109,7 @@ jobs:
       - name: Download Reborn & Prepare YouTube iPA
         run: |
           curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
-          curl -L "https://iosmod.net/deb/com.iosmod.youtubepremium_5.0.0_iphoneos-arm-new.deb" --output "main/Tweaks/Reborn/YouTube.Reborn.v4.2.6.deb"
+          curl -L "https://iosmod.net/deb/com.iosmod.youtubepremium_5.0.0_iphoneos-arm.deb" --output "main/Tweaks/Reborn/YouTube.Reborn.v4.2.6.deb"
           echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} downloaded! \033[0m"
           wget "$YOUTUBE_URL" --no-verbose -O main/YouTube.ipa
           echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} downloaded! \033[0m"
