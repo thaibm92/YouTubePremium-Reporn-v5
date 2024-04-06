@@ -1,7 +1,7 @@
 // About
 "ABOUT" = "Acerca de";
 
-"VERSION" = "Versión de YouTubeRebornPlus: %@";
+"VERSION" = "Versión de IOSMOD.NET: %@";
 "VERSION_CHECK" = "Pulse para comprobar si hay actualizaciones.";
 
 "REPORT_AN_ISSUE" = "Informar de un problema";
@@ -141,7 +141,7 @@
 "HIDE_SPONSORBLOCK_BUTTON" = "Ocultar botón de iSponsorBlock en la barra de navegación";
 "HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
 
-"HIDE_YOUTUBE_REBORN_BUTTON" = "Ocultar botón de YouTube Reborn en la barra de navegación";
+"HIDE_YOUTUBE_REBORN_BUTTON" = "Ocultar botón de IOSMOD.NET en la barra de navegación";
 "HIDE_YOUTUBE_REBORN_BUTTON_DESC" = "";
 
 "YT_SPEED" = "Habilitar YTSpeed";
