@@ -761,5 +761,11 @@ static void replaceTab(YTIGuideResponse *response) {
     }
     if (![allKeys containsObject:@"YouPiPEnabled"]) { 
        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"YouPiPEnabled"]; 
-	}
+    }
+    if (![allKeys containsObject:@"hideSponsorBlockButton_enabled"]) { 
+       [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hideSponsorBlockButton_enabled"];
+    }
+    if (![allKeys containsObject:@"hideYouTubeRebornButton_enabled"]) { 
+       [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hideYouTubeRebornButton_enabled"];
+    }
 }
