@@ -1,7 +1,7 @@
 // About
 "ABOUT" = "เกี่ยวกับ";
 
-"VERSION" = "เวอร์ชันของ YouTubeBornPlus: %@";
+"VERSION" = "เวอร์ชันของ IOSMOD.NET: %@";
 "VERSION_CHECK" = "แตะเพื่อตรวจสอบการอัปเดต!";
 
 "REPORT_AN_ISSUE" = "รายงานปัญหา";
@@ -141,7 +141,7 @@
 "HIDE_SPONSORBLOCK_BUTTON" = "ซ่อนปุ่ม Isponsorblock ในแถบการนำทาง";
 "HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
 
-"HIDE_YOUTUBE_REBORN_BUTTON" = "ซ่อนปุ่ม Reborn YouTube ในแถบนำทาง";
+"HIDE_YOUTUBE_REBORN_BUTTON" = "ซ่อนปุ่ม IOSMOD.NET ในแถบนำทาง";
 "HIDE_YOUTUBE_REBORN_BUTTON_DESC" = "";
 
 "YT_SPEED" = "เปิดใช้งาน ytspeed";
