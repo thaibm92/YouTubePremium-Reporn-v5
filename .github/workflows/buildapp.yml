@@ -134,8 +134,9 @@ jobs:
           cd ${{ github.workspace }}/main
           sed -i '' "11s#.*#BUNDLE_ID = ${{ env.BUNDLE_ID }}#g" Makefile
           sed -i '' "10s#.*#DISPLAY_NAME = ${{ env.APP_NAME }}#g" Makefile
+          sed -i '' "s/^PACKAGE_VERSION.*$/PACKAGE_VERSION = ${{ inputs.youtube_version }}-${{ inputs.reborn_version }}/" Makefile
           make package FINALPACKAGE=1
-          (mv "packages/$(ls -t packages | head -n1)" "packages/YouTubeRebornPlus_${{ env.YOUTUBE_VERSION }}_${{ env.REBORN_VERSION }}.ipa")
+          (mv "packages/$(ls -t packages | head -n1)" "packages/YouTubePremium_L${{ env.YOUTUBE_VERSION }}_${{ env.REBORN_VERSION }}.ipa")
           echo "package=$(ls -t packages | head -n1)" >>$GITHUB_OUTPUT
           echo -e "==> \033[1mSHASUM256: $(shasum -a 256 packages/*.ipa | cut -f1 -d' ')\033[0m"
           echo -e "==> \033[1mBundle ID: ${{ env.BUNDLE_ID }}\033[0m"
@@ -152,7 +153,7 @@ jobs:
           REBORN_VERSION: ${{ inputs.reborn_version }}
           YOUTUBE_VERSION: ${{ inputs.youtube_version }}
         with:
-          name: YouTubeRebornPlus_${{ env.YOUTUBE_VERSION }}_${{ env.REBORN_VERSION }}
+          name: YouTubePremium_${{ env.YOUTUBE_VERSION }}_${{ env.REBORN_VERSION }}
           path: ${{ github.workspace }}/main/packages/${{ steps.build_package.outputs.package }}
           if-no-files-found: error
 
