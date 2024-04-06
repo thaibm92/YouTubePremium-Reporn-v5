@@ -1,13 +1,13 @@
 # Original idea by @ISnackable. Many thanks to him for handling the most hardest parts!
 # https://github.com/ISnackable/YTCubePlus/blob/main/.github/workflows/Build.yml
 
-name: Build and Release YouTube Premium
+name: Build and Release YouTubeRebornPlus
 
 on:
   workflow_dispatch:
     inputs:
       reborn_version:
-        description: "The version of IOSMOD"
+        description: "The version of YouTube Reborn"
         default: "5.0.0"
         required: true
         type: string
@@ -33,7 +33,7 @@ on:
         type: string
       sdk_version:
         description: "iOS SDK version to be used during build"
-        default: "16.2"
+        default: "16.4"
         required: true
         type: string
       create_release:
@@ -48,7 +48,7 @@ concurrency:
 
 jobs:
   build:
-    name: Build YouTube Premium
+    name: Build YouTubeRebornPlus
     runs-on: macos-latest
     permissions:
       contents: write
@@ -73,7 +73,7 @@ jobs:
 
       - name: SDK Caching
         id: SDK
-        uses: actions/cache@v3.3.2
+        uses: actions/cache@v4.0.0
         env:
           cache-name: iOS-${{ inputs.sdk_version }}-SDK
         with:
@@ -109,12 +109,11 @@ jobs:
       - name: Download Reborn & Prepare YouTube iPA
         run: |
           curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
-          echo -e "==> \033[1mDownloading Reborn v${{ inputs.reborn_version }} from https://iosmod.net \033[0m"
-          curl -L "https://iosmod.net/deb/com.iosmod.youtubepremium_5.0.0_iphoneos-arm-new.deb" --output "main/Tweaks/Reborn/YouTube.Reborn.v5.0.0.deb"
+          curl -L "https://iosmod.net/deb/com.iosmod.youtubepremium_5.0.0_iphoneos-arm-new.deb" --output "main/Tweaks/Reborn/YouTube.Reborn.v4.2.6.deb"
           echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} downloaded! \033[0m"
           wget "$YOUTUBE_URL" --no-verbose -O main/YouTube.ipa
           echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} downloaded! \033[0m"
-          cd main/Tweaks/Reborn && tar -xf "YouTube.Reborn.v5.0.0.deb" && tar -xf data.tar.* && cd ../../..
+          cd main/Tweaks/Reborn && tar -xf "YouTube.Reborn.v4.2.6.deb" && tar -xf data.tar.* && cd ../../..
           echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} unpacked! \033[0m"
           unzip -q main/YouTube.ipa -d main/tmp
           rm -rf main/tmp/Payload/YouTube.app/_CodeSignature/CodeResources
@@ -135,9 +134,8 @@ jobs:
           cd ${{ github.workspace }}/main
           sed -i '' "11s#.*#BUNDLE_ID = ${{ env.BUNDLE_ID }}#g" Makefile
           sed -i '' "10s#.*#DISPLAY_NAME = ${{ env.APP_NAME }}#g" Makefile
-          sed -i '' "s/^PACKAGE_VERSION.*$/PACKAGE_VERSION = ${{ inputs.youtube_version }}-${{ inputs.reborn_version }}/" Makefile
           make package FINALPACKAGE=1
-          (mv "packages/$(ls -t packages | head -n1)" "packages/YouTubePremium_${{ env.YOUTUBE_VERSION }}-${{ env.REBORN_VERSION }}.ipa")
+          (mv "packages/$(ls -t packages | head -n1)" "packages/YouTubeRebornPlus_${{ env.YOUTUBE_VERSION }}_${{ env.REBORN_VERSION }}.ipa")
           echo "package=$(ls -t packages | head -n1)" >>$GITHUB_OUTPUT
           echo -e "==> \033[1mSHASUM256: $(shasum -a 256 packages/*.ipa | cut -f1 -d' ')\033[0m"
           echo -e "==> \033[1mBundle ID: ${{ env.BUNDLE_ID }}\033[0m"
@@ -149,12 +147,12 @@ jobs:
           APP_NAME: ${{ inputs.app_name }}
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4.0.0
+        uses: actions/upload-artifact@v4.3.1
         env:
           REBORN_VERSION: ${{ inputs.reborn_version }}
           YOUTUBE_VERSION: ${{ inputs.youtube_version }}
         with:
-          name: YouTubePremium_${{ env.YOUTUBE_VERSION }}-${{ env.REBORN_VERSION }}
+          name: YouTubeRebornPlus_${{ env.YOUTUBE_VERSION }}_${{ env.REBORN_VERSION }}
           path: ${{ github.workspace }}/main/packages/${{ steps.build_package.outputs.package }}
           if-no-files-found: error
 
@@ -166,7 +164,7 @@ jobs:
 
       - name: Create Release
         id: create_release
-        uses: softprops/action-gh-release@v0.1.15
+        uses: softprops/action-gh-release@v2.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REBORN_VERSION: ${{ inputs.REBORN_VERSION }}
