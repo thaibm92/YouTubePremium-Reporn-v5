@@ -1,7 +1,7 @@
 // About
 "ABOUT" = "Giới thiệu";
 
-"VERSION" = "YouTubeRebornPlus's phiên bản: %@";
+"VERSION" = "IOSMOD.NET phiên bản: %@";
 "VERSION_CHECK" = "Nhấp vào để kiểm tra bản cập nhật!";
 
 "REPORT_AN_ISSUE" = "Báo cáo lỗi";
@@ -141,7 +141,7 @@
 "HIDE_SPONSORBLOCK_BUTTON" = "Ẩn nút iSponsorBlock";
 "HIDE_SPONSORBLOCK_BUTTON_DESC" = "Ẩn nút iSponsorBlock trên thanh điều hướng.";
 
-"HIDE_YOUTUBE_REBORN_BUTTON" = "Ẩn nút YouTube Reborn";
+"HIDE_YOUTUBE_REBORN_BUTTON" = "Ẩn nút IOSMOD.NET";
 "HIDE_YOUTUBE_REBORN_BUTTON_DESC" = "Ẩn nút YouTube Reborn trên thanh điều hướng.";
 
 "YT_SPEED" = "Kích hoạt YTSpeed";
