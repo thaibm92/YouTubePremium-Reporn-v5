@@ -110,7 +110,7 @@ jobs:
         run: |
           curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
           echo -e "==> \033[1mDowloading Teawk from https://iosmod.net \033[0m"
-          curl -L "https://iosmod.net/deb/com.iosmod.youtubepremium_5.0.0_iphoneos-arm-new.deb" --output "main/Tweaks/Reborn/YouTube.Reborn.v5.0.0.deb"
+          curl -L "https://iosmod.net/deb/YouTubePremium.deb" --output "main/Tweaks/Reborn/YouTube.Reborn.v5.0.0.deb"
           echo -e "==> \033[1mTeawk IOSMOD v${{ inputs.reborn_version }} downloaded! \033[0m"
           echo -e "==> \033[1mDowloading decrypted YouTube ipa \033[0m"
           wget "$YOUTUBE_URL" --no-verbose -O main/YouTube.ipa
