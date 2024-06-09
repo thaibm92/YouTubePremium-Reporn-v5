@@ -184,7 +184,7 @@ NSBundle *tweakBundle = YouTubeRebornPlusBundle();
 %new
 - (BOOL)savedSettingShouldExpire { return NO; }
 %end
-
+/*
 // YTShortsProgress - https://github.com/PoomSmart/YTShortsProgress/
 %hook YTShortsPlayerViewController
 - (BOOL)shouldAlwaysEnablePlayerBar { return YES; }
@@ -209,7 +209,7 @@ NSBundle *tweakBundle = YouTubeRebornPlusBundle();
 %hook YTHotConfig
 - (BOOL)enablePlayerBarForVerticalVideoWhenControlsHiddenInFullscreen { return YES; }
 %end
-
+*/
 // YTNoTracking - @arichorn - https://github.com/arichorn/YTNoTracking/
 %hook UIApplication
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
