@@ -625,14 +625,14 @@ static void replaceTab(YTIGuideResponse *response) {
 // }
 // %end
 %end
-
+/*
 // YT startup animation
 %hook YTColdConfig
 - (BOOL)mainAppCoreClientIosEnableStartupAnimation {
     return IS_ENABLED(@"ytStartupAnimation_enabled") ? YES : NO;
 }
 %end
-
+*/
 // YTCastConfirm: https://github.com/JamieBerghmans/YTCastConfirm
 %hook MDXPlaybackRouteButtonController
 - (void)didPressButton:(id)arg1 {
@@ -756,9 +756,12 @@ static void replaceTab(YTIGuideResponse *response) {
 
     // Change the default value of some options
     NSArray *allKeys = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys];
+    if (![allKeys containsObject:@"YouPiPEnabled"]) { 
+       [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"YouPiPEnabled"]; 
+    }
     /*if (![allKeys containsObject:@"RYD-ENABLED"]) { 
        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"RYD-ENABLED"]; 
-    }*/
+   
     if (![allKeys containsObject:@"YouPiPEnabled"]) { 
        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"YouPiPEnabled"]; 
     }
@@ -768,4 +771,5 @@ static void replaceTab(YTIGuideResponse *response) {
     if (![allKeys containsObject:@"hideYouTubeRebornButton_enabled"]) { 
        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hideYouTubeRebornButton_enabled"];
     }
+*/
 }
